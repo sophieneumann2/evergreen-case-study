@@ -14,160 +14,231 @@
     <title>Rentenlücke berechnen</title>
   </head>
   <body>
-    <h2>Rentenlücke berechnen</h1>
-
-    <section>
-      <h3>Daten eingeben</h2>
-
-      <div class="input-group mb-3">
-        <label class="input-group-text" for="inputGroupSelect01"
-          >Geburtsjahr</label
-        >
-        <select class="form-select" id="inputGroupSelect01">
-          <option selected>Choose...</option>
-          <option value="1">One</option>
-          <option value="2">Two</option>
-          <option value="3">Three</option>
-        </select>
+    <section id="scn-configurePersonalData">
+      <h1>Rentenlücke berechnen</h1>
+      <div id="div-start">
+        <p>Jetzt Rentenlücke berechnen</p>
+        <button type="button" class="btn btn-primary" id="btn-start">
+          Start
+        </button>
       </div>
 
-      <div class="input-group mb-3">
-        <label class="input-group-text" for="inputGroupSelect01"
-          >Renteneintrittsalter</label
-        >
-        <select class="form-select" id="inputGroupSelect01">
-          <option selected>Choose...</option>
-          <option value="1">One</option>
-          <option value="2">Two</option>
-          <option value="3">Three</option>
-        </select>
+      <div id="div-birth" style="display: none">
+        <p>In welchem Jahr wurdest du geboren?</p>
+        <div class="row">
+          <div class="form-floating mb-3 col-4">
+            <input
+              type="year"
+              class="form-control"
+              id="floatingInput"
+              placeholder="name@example.com"
+            />
+            <label for="floatingInput">Geburtsjahr</label>
+          </div>
+        </div>
+
+        <button type="button" class="btn btn-primary btn-next">Weiter</button>
       </div>
 
-      <div class="input-group">
-        <input
-          type="text"
-          class="form-control"
-          placeholder="monatliches Bruttoeinkommen"
-          aria-label="Dollar amount (with dot and two decimal places)"
-        />
-        <span class="input-group-text">€</span>
+      <div id="div-workSettings" style="display: none">
+        <p>In welchem Jahr hast du begonnen, zu arbeiten?</p>
+        <div class="row">
+          <div class="form-floating mb-3 col-4">
+            <input
+              type="email"
+              class="form-control"
+              id="floatingInput"
+              placeholder="name@example.com"
+            />
+            <label for="floatingInput">Berufseintrittsjahr</label>
+          </div>
+        </div>
+
+        <p>Wie hoch war dein letztes monatliches Bruttoeinkommen?</p>
+        <div class="row">
+          <div class="col-4">
+            <div class="input-group">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="monatliches Bruttoeinkommen"
+                aria-label="Dollar amount (with dot and two decimal places)"
+              />
+              <span class="input-group-text">€</span>
+            </div>
+          </div>
+        </div>
+        <button type="button" class="btn btn-primary btn-previous">
+          Zurück
+        </button>
+        <button type="button" class="btn btn-primary btn-next">Weiter</button>
       </div>
 
-      <div class="input-group">
-        <input
-          type="text"
-          class="form-control"
-          placeholder="monatliche Wunschrente (netto)"
-          aria-label="Dollar amount (with dot and two decimal places)"
-        />
-        <span class="input-group-text">€</span>
+      <div id="div-retirementSettings" style="display: none">
+        <p>In welchem Alter möchtest du in Rente gehen?</p>
+
+        <div class="row">
+          <div class="form-floating mb-3 col-4">
+            <input
+              type="email"
+              class="form-control"
+              id="floatingInput"
+              placeholder="name@example.com"
+            />
+            <label for="floatingInput">geplantes Renteneintrittsalter</label>
+          </div>
+        </div>
+
+        <p>Wie viel Rente möchtest Du monatlich erhalten (brutto)?</p>
+        <div class="row">
+          <div class="col-4">
+            <div class="input-group">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="monatliche Wunschrente (netto)"
+                aria-label="Dollar amount (with dot and two decimal places)"
+              />
+              <span class="input-group-text">€</span>
+            </div>
+          </div>
+        </div>
+        <button type="button" class="btn btn-primary btn-previous">
+          Zurück
+        </button>
+        <button type="button" class="btn btn-primary btn-next">Weiter</button>
       </div>
 
-      <div class="input-group mb-3">
-        <label class="input-group-text" for="inputGroupSelect01"
-          >Rentenart</label
-        >
-        <select class="form-select" id="inputGroupSelect01">
-          <option selected>Choose...</option>
-          <option value="1">One</option>
-          <option value="2">Two</option>
-          <option value="3">Three</option>
-        </select>
-      </div>
+      <div id="div-retirementFurtherSettings" style="display: none">
+        <p>
+          Sollen wir die Inflation und/oder Deine jährliche Gehaltssteigerung
+          berücksichtigen?
+        </p>
 
-      <div class="input-group mb-3">
-        <label class="input-group-text" for="inputGroupSelect01"
-          >Zugangsfaktor</label
-        >
-        <select class="form-select" id="inputGroupSelect01">
-          <option selected>Choose...</option>
-          <option value="1">One</option>
-          <option value="2">Two</option>
-          <option value="3">Three</option>
-        </select>
-      </div>
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            value=""
+            id="flexCheckDefault"
+          />
+          <label class="form-check-label" for="flexCheckDefault">
+            Inflation 1.9 %
+          </label>
+        </div>
 
-      <div class="form-check form-switch">
-        <input
-          class="form-check-input"
-          type="checkbox"
-          id="flexSwitchCheckDefault"
-        />
-        <label class="form-check-label" for="flexSwitchCheckDefault"
-          >Inflation 1.9 %</label
-        >
-      </div>
-
-      <div class="form-check form-switch">
-        <input
-          class="form-check-input"
-          type="checkbox"
-          id="flexSwitchCheckDefault"
-        />
-        <label class="form-check-label" for="flexSwitchCheckDefault"
-          >Jährliche Gehaltssteigerung 2 %</label
-        >
-      </div>
-
-      <button type="button" class="btn btn-primary">Rente berechnen</button>
-    </section>
-
-    <section>
-      <h3>Berechnete Daten</h2>
-      <div class="input-group mb-3">
-        <span class="input-group-text">Wunschrente</span>
-        <input
-          type="text"
-          class="form-control"
-          aria-label="Dollar amount (with dot and two decimal places)"
-          placeholder="10.000"
-          disabled
-        />
-        <span class="input-group-text">€</span>
-      </div>
-      <div class="input-group mb-3">
-        <span class="input-group-text">Bruttorente</span>
-        <input
-          type="text"
-          class="form-control"
-          aria-label="Dollar amount (with dot and two decimal places)"
-          placeholder="10.000"
-          disabled
-        />
-        <span class="input-group-text">€</span>
-      </div>
-      <div class="input-group mb-3">
-        <span class="input-group-text">Nettorente</span>
-        <input
-          type="text"
-          class="form-control"
-          aria-label="Dollar amount (with dot and two decimal places)"
-          placeholder="10.000"
-          disabled
-        />
-        <span class="input-group-text">€</span>
-      </div>
-      <div class="input-group mb-3">
-        <span class="input-group-text">Rentenlücke</span>
-        <input
-          type="text"
-          class="form-control"
-          aria-label="Dollar amount (with dot and two decimal places)"
-          placeholder="10.000"
-          disabled
-        />
-        <span class="input-group-text">€</span>
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            value=""
+            id="flexCheckDefault"
+          />
+          <label class="form-check-label" for="flexCheckDefault">
+            Jährliche Gehaltssteigerung 2 %
+          </label>
+        </div>
+        <button type="button" class="btn btn-primary btn-previous">
+          Zurück
+        </button>
+        <button type="button" class="btn btn-danger" id="btn-doCalculation">
+          Rente berechnen
+        </button>
       </div>
     </section>
 
-    <section>
-      <h3>Call To Action</h2>
-      <p>
-        Hier kann man noch hinschreiben, welche Evergreen-Anlagen möglich wären,
-        um die Rentenlücke in den bestehenden Jahren zu füllen. z.B.
-        Risikostufen anzeigen und wie viel man damit monatlich ansparen müsste
-      </p>
-      <button type="button" class="btn btn-primary">Jetzt vorsorgen</button>
+    <section id="scn-calculatedData" style="display: none">
+      <h3>Berechnete Daten</h3>
+
+      <div class="mb-3 row">
+        <label for="retirementGoal" class="col-sm-2 col-form-label"
+          >Wunschrente</label
+        >
+        <div class="col-sm-10">
+          <input
+            type="text"
+            readonly
+            class="form-control-plaintext"
+            id="retirementGoal"
+            value="10.000 €"
+          />
+        </div>
+      </div>
+
+      <div class="mb-3 row">
+        <label for="retirementBrutto" class="col-sm-2 col-form-label"
+          >Bruttorente</label
+        >
+        <div class="col-sm-10">
+          <input
+            type="text"
+            readonly
+            class="form-control-plaintext"
+            id="retirementBrutto"
+            value="10.000 €"
+          />
+        </div>
+      </div>
+
+      <div class="mb-3 row">
+        <label for="retirementNetto" class="col-sm-2 col-form-label"
+          >Nettorente</label
+        >
+        <div class="col-sm-10">
+          <input
+            type="text"
+            readonly
+            class="form-control-plaintext"
+            id="retirementNetto"
+            value="10.000 €"
+          />
+        </div>
+      </div>
+
+      <div class="mb-3 row">
+        <label for="retirementGap" class="col-sm-2 col-form-label"
+          >Rentenlücke</label
+        >
+        <div class="col-sm-10">
+          <input
+            type="text"
+            readonly
+            class="form-control-plaintext"
+            id="retirementGap"
+            value="10.000 €"
+          />
+        </div>
+      </div>
+
+      <div id="scn-callToAction">
+        <h3>Call To Action</h3>
+        <p>
+          Hier kann man noch hinschreiben, welche Evergreen-Anlagen möglich
+          wären, um die Rentenlücke in den bestehenden Jahren zu füllen. z.B.
+          Risikostufen anzeigen und wie viel man damit monatlich ansparen müsste
+        </p>
+        <div class="row">
+          <div class="col-6">
+            <label for="range_riskStage" class="form-label">Risikostufe</label>
+            <input
+              type="range"
+              class="form-range"
+              min="1"
+              max="10"
+              step="1"
+              id="range_riskStage"
+            />
+          </div>
+
+          <div class="col-6">
+            <p>Monatliche Sparrate bis zum Rentenbeginn</p>
+            <p>1000 €</p>
+          </div>
+        </div>
+        <button type="button" class="btn btn-primary">Jetzt vorsorgen</button>
+      </div>
     </section>
+    <script src="main.js"></script>
+    <script src="calculation.js"></script>
   </body>
 </html>
