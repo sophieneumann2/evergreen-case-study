@@ -43,6 +43,8 @@ startButtonElement.addEventListener('click', () => {
 
 calculateButtonElement.addEventListener('click', () => {
   resultSectionElement.style.display = '';
+  var desiredRetirementElementValue = setDesiredRetirementElement.value;
+  evalDesiredRetirementElement.innerText = desiredRetirementElementValue;
 });
 
 for (let nextButton of nextButtonsElement) {
@@ -57,4 +59,10 @@ for (let previousButton of previousButtonsElement) {
     currentDivDisplayed--;
     displayDiv(currentDivDisplayed);
   });
+}
+
+const riskStageElement = document.getElementById('range_riskStage');
+
+function showValue(newValue) {
+  document.getElementById('riskStage').innerHTML = newValue;
 }
