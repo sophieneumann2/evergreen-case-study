@@ -1,8 +1,85 @@
+/*font-family: 'Lato', sans-serif;
+font-family: 'Playfair Display', serif;*/
+html {
+  background-color: rgb(245, 244, 248);
+}
+
 body {
   width: 80%;
   margin: 0 auto;
+  font-family: 'Lato', sans-serif;
 }
 
 .btn {
   margin: 2rem 1rem 0 0;
+  background-color: rgb(113, 201, 177);
+  border-color: rgb(113, 201, 177);
+  border-width: 0.1em;
+  color: rgb(61, 68, 72);
+  border-radius: 2em;
+  padding-left: 2em;
+  padding-right: 2em;
+}
+
+.btn:hover {
+  transition: all 0.25s ease;
+  background-color: rgb(113, 201, 177);
+  border-color: rgb(222, 252, 244);
+  border-width: 0.1em;
+  color: rgb(61, 68, 72);
+  transform: scale(1.1);
+}
+
+#btn-doCalculation,
+#btn-start,
+#btn-callToAction {
+  background-color: rgb(35, 204, 159);
+  border-color: rgb(233, 200, 14);
+  border-width: 0.1em;
+  color: rgb(61, 68, 72);
+}
+
+#btn-doCalculation:hover,
+#btn-start:hover,
+#btn-callToAction:hover {
+  background-color: rgb(233, 200, 14);
+  border-color: rgb(245, 244, 248);
+  border-width: 0.1em;
+  color: rgb(61, 68, 72);
+}
+
+#div-start {
+  background: rgb(245, 244, 248);
+}
+
+#div-start > div {
+  padding: 2em;
+  background: rgb(88, 72, 149);
+  border-radius: 1em;
+}
+
+#div-start > div > h1 {
+  font-family: 'Playfair Display', serif;
+  color: rgb(245, 244, 248);
+}
+
+#div-start > div > p {
+  color: rgb(245, 244, 248);
+}
+
+body > section {
+  padding: 4rem;
+}
+
+#scn-configurePersonalData {
+  background: rgb(88, 72, 149);
+  color: rgb(245, 244, 248);
+}
+
+#scn-calculatedData {
+  background: rgb(245, 244, 248);
+}
+
+#heading {
+  font-family: 'Playfair Display', serif;
 }

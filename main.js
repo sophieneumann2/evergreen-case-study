@@ -37,6 +37,8 @@ let currentDivDisplayed = 0;
 
 startButtonElement.addEventListener('click', () => {
   startScreenElement.style.display = 'none';
+  document.getElementById('heading').style.display = '';
+  document.getElementById('scn-configurePersonalData').style.display = '';
   let currentDivDisplayed = 0;
   displayDiv(currentDivDisplayed);
 });
@@ -44,6 +46,7 @@ startButtonElement.addEventListener('click', () => {
 calculateButtonElement.addEventListener('click', () => {
   resultSectionElement.style.display = '';
   calculateRetirement();
+  updateChart(myChart);
   calculateMonthlySavings();
 });
 

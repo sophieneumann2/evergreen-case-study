@@ -10,19 +10,38 @@
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
       crossorigin="anonymous"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Playfair+Display:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
     <title>Rentenlücke berechnen</title>
   </head>
   <body>
-    <section id="scn-configurePersonalData">
-      <h1>Rentenlücke berechnen</h1>
-      <div id="div-start">
-        <p>Jetzt Rentenlücke berechnen</p>
-        <button type="button" class="btn btn-primary" id="btn-start">
-          Start
-        </button>
+    <div id="div-start" class="mt-5">
+      <div class="jumbotron">
+        <h1 class="display-4">Jetzt Rentenlücke berechnen</h1>
+        <p class="lead">
+          This is a simple hero unit, a simple jumbotron-style component for
+          calling extra attention to featured content or information.
+        </p>
+        <hr class="my-4" />
+        <p>
+          It uses utility classes for typography and spacing to space content
+          out within the larger container.
+        </p>
+        <div class="d-flex flex-row justify-content-center">
+          <button type="button" class="btn btn-primary btn-lg" id="btn-start">
+            Start
+          </button>
+        </div>
       </div>
+    </div>
 
+    <section id="scn-configurePersonalData" class="mt-5" style="display: none">
+      <h1 id="heading" style="display: none">Rentenlücke berechnen</h1>
       <div id="div-birth" style="display: none">
         <p>In welchem Jahr wurdest du geboren?</p>
         <div class="row">
@@ -165,7 +184,7 @@
       </div>
     </section>
 
-    <section id="scn-calculatedData" style="display: none">
+    <section class="mt-5 mb-5" id="scn-calculatedData" style="display: none">
       <h3>Berechnete Daten</h3>
       <h4>So berechnen wir Deine Rente</h4>
       <p>
@@ -174,65 +193,147 @@
         sunt at placeat earum omnis laboriosam cupiditate! Soluta, alias
         possimus. Libero vitae quisquam alias possimus nihil repellendus
         voluptates veritatis aliquid quidem asperiores eaque, doloribus maiores
-        architecto porro tenetur explicabo rem, accusamus dolores vel. Deleniti
-        id repellat iure veritatis debitis unde? Earum ut magni pariatur sed
-        saepe, itaque eum, temporibus veniam molestiae animi dolor commodi a nam
-        suscipit repudiandae dicta distinctio aliquam consequatur, quibusdam
-        beatae illo incidunt cupiditate reprehenderit. Consequuntur, id.
+        architecto porro tenetur explicabo rem, accusamus dolores vel.
       </p>
-      <table>
-        <tr>
-          <td class="pe-5">Wunschrente</td>
-          <td><span id="retirementGoal"></span> €</td>
-        </tr>
-        <tr>
-          <td>Bruttorente</td>
-          <td><span id="retirementBrutto"></span> €</td>
-        </tr>
-        <tr>
-          <td>Nettorente</td>
-          <td><span id="retirementNetto"></span> €</td>
-        </tr>
-        <tr>
-          <td>Rentenlücke</td>
-          <td><span id="retirementGap"></span> €</td>
-        </tr>
-      </table>
 
-      <div id="scn-callToAction">
-        <h3>Call To Action</h3>
-        <p>
-          Hier kann man noch hinschreiben, welche Evergreen-Anlagen möglich
-          wären, um die Rentenlücke in den bestehenden Jahren zu füllen. z.B.
-          Risikostufen anzeigen und wie viel man damit monatlich ansparen müsste
-        </p>
-        <div class="row">
-          <div class="mb-3 row">
-            <div class="col-2">Risikostufe</div>
-            <div class="col-1" id="riskStage">6</div>
-          </div>
-          <div class="col-6">
-            <input
-              type="range"
-              class="form-range"
-              min="1"
-              max="10"
-              step="1"
-              id="range_riskStage"
-              oninput="showValue(this.value)"
-              onchange="showValue(this.value)"
-            />
-          </div>
-
-          <div class="col-6">
-            <p>Monatliche Sparrate bis zum Rentenbeginn</p>
-            <p><span id="monthlySavingRate"></span> €</p>
+      <div
+        class="d-flex flex-row justify-content-evenly align-items-center"
+        id="explainCalculations"
+      >
+        <div class="card me-5">
+          <img src="https://source.unsplash.com/random/140x80" alt="" />
+          <div class="card-body">
+            <p class="card-title">Entgeltpunkte</p>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime,
+              error!
+            </p>
           </div>
         </div>
-        <button type="button" class="btn btn-primary">Jetzt vorsorgen</button>
+
+        <div class="card me-5">
+          <img src="https://source.unsplash.com/random/140x80" alt="" />
+          <div class="card-body">
+            <p class="card-title">Renteneintrittsalter</p>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime,
+              error!
+            </p>
+          </div>
+        </div>
+
+        <div class="card me-5">
+          <img src="https://source.unsplash.com/random/140x80" alt="" />
+          <div class="card-body">
+            <p class="card-title">Ort (Ost/West)</p>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime,
+              error!
+            </p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="https://source.unsplash.com/random/140x80" alt="" />
+          <div class="card-body">
+            <p class="card-title">Weitere Faktoren</p>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime,
+              error!
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="row mt-5" id="scn-callToAction">
+        <table class="col-3">
+          <tr>
+            <td class="pe-5">Wunschrente</td>
+            <td><span id="retirementGoal"></span> €</td>
+          </tr>
+          <tr>
+            <td>Bruttorente</td>
+            <td><span id="retirementBrutto"></span> €</td>
+          </tr>
+          <tr>
+            <td>Nettorente</td>
+            <td><span id="retirementNetto"></span> €</td>
+          </tr>
+          <tr>
+            <td>Rentenlücke</td>
+            <td><span id="retirementGap"></span> €</td>
+          </tr>
+        </table>
+
+        <div class="col-3">
+          <canvas id="chart" height="300px"></canvas>
+        </div>
+
+        <div class="col-6">
+          <h3>Call To Action</h3>
+          <p>
+            Hier kann man noch hinschreiben, welche Evergreen-Anlagen möglich
+            wären, um die Rentenlücke in den bestehenden Jahren zu füllen. z.B.
+            Risikostufen anzeigen und wie viel man damit monatlich ansparen
+            müsste
+          </p>
+          <div class="row d-flex flex-row align-items-center">
+            <div
+              class="
+                col-6
+                d-flex
+                flex-column
+                justify-content-center
+                align-items-center
+              "
+            >
+              <p>Risikostufe <span id="riskStage">6</span></p>
+              <!--<div class="mb-3 row">
+                <div class="col-4">Risikostufe</div>
+                <div class="col-2" id="riskStage">6</div>
+              </div>-->
+              <input
+                type="range"
+                class="form-range"
+                min="1"
+                max="10"
+                step="1"
+                id="range_riskStage"
+                oninput="showValue(this.value)"
+                onchange="showValue(this.value)"
+              />
+            </div>
+
+            <div
+              class="
+                col-6
+                d-flex
+                flex-column
+                justify-content-center
+                align-items-center
+              "
+            >
+              <p class="text-center">
+                Monatliche Sparrate bis zum Rentenbeginn
+              </p>
+              <p><span id="monthlySavingRate"></span> €</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="d-flex flex-row justify-content-center">
+        <button
+          type="button"
+          class="btn btn-primary btn-lg"
+          id="btn-callToAction"
+        >
+          Jetzt vorsorgen
+        </button>
       </div>
     </section>
     <script src="main.js"></script>
     <script src="calculation.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.3.0/Chart.min.js"></script>
+    <script src="drawRetirementChart.js"></script>
   </body>
 </html>
