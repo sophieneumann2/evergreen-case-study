@@ -45,6 +45,9 @@ startButtonElement.addEventListener('click', () => {
 
 calculateButtonElement.addEventListener('click', () => {
   resultSectionElement.style.display = '';
+  resultSectionElement.scrollIntoView({
+    behavior: 'smooth'
+  });
   calculateRetirement();
   updateChart(myChart);
   calculateMonthlySavings();

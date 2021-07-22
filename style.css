@@ -5,8 +5,9 @@ html {
 }
 
 body {
-  width: 80%;
-  margin: 0 auto;
+  /*width: 80%;*/
+  background-color: rgb(245, 244, 248);
+  /*margin: 0 auto;*/
   font-family: 'Lato', sans-serif;
 }
 
@@ -30,6 +31,12 @@ body {
   transform: scale(1.1);
 }
 
+.btn:active,
+.btn:focus {
+  box-shadow: none;
+  outline: none;
+}
+
 #btn-doCalculation,
 #btn-start,
 #btn-callToAction {
@@ -50,12 +57,15 @@ body {
 
 #div-start {
   background: rgb(245, 244, 248);
+  width: 80%;
+  margin: 5em auto 10em auto;
 }
 
 #div-start > div {
   padding: 2em;
-  background: rgb(88, 72, 149);
+  background: rgb(67, 56, 113);
   border-radius: 1em;
+  height: 35rem;
 }
 
 #div-start > div > h1 {
@@ -67,19 +77,83 @@ body {
   color: rgb(245, 244, 248);
 }
 
-body > section {
-  padding: 4rem;
+#scn-configurePersonalData {
+  width: 80%;
+  margin: 5em auto 10em auto;
+  background: rgb(67, 56, 113);
+  color: rgb(245, 244, 248);
+  border-radius: 1em;
+  height: 35rem;
+  scroll-behavior: smooth;
 }
 
-#scn-configurePersonalData {
-  background: rgb(88, 72, 149);
-  color: rgb(245, 244, 248);
+#scn-configurePersonalData > div {
+  padding: 2rem;
+}
+
+#div-explanations {
+  padding: 0 8em 0 8em;
 }
 
 #scn-calculatedData {
   background: rgb(245, 244, 248);
 }
 
-#heading {
+#scn-calculatedData > div > div > div > img {
+  width: 100px;
+  height: auto;
+}
+
+#scn-callToAction {
+  background-color: rgb(170, 159, 212);
+  color: rgb(6, 23, 17);
+  padding: 3em 3em 3em 5em;
+}
+
+#div-callToAction {
+  background-color: rgb(170, 159, 212);
+  color: rgb(6, 23, 17);
+  padding-bottom: 3em;
+}
+
+#explainCalculations {
+  padding-bottom: 3em;
+}
+
+#heading,
+.heading3-dark {
   font-family: 'Playfair Display', serif;
+}
+
+#img-person-sitting-1 {
+  position: absolute;
+  z-index: 10;
+  top: 105px;
+  right: 50px;
+  width: 400px;
+  height: auto;
+}
+
+.bar-green {
+  height: 20px;
+  width: 100%;
+  margin: 0;
+  margin-bottom: 4em;
+  position: relative;
+  left: -20rem;
+  background-color: rgb(35, 204, 159);
+  animation: move-in-from-left 3s ease 1;
+}
+
+.subheading {
+  font-weight: bold;
+}
+
+@keyframes move-in-from-left {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0px);
+  }
 }
