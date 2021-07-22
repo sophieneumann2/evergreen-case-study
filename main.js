@@ -43,8 +43,8 @@ startButtonElement.addEventListener('click', () => {
 
 calculateButtonElement.addEventListener('click', () => {
   resultSectionElement.style.display = '';
-  var desiredRetirementElementValue = setDesiredRetirementElement.value;
-  evalDesiredRetirementElement.innerText = desiredRetirementElementValue;
+  calculateRetirement();
+  calculateMonthlySavings();
 });
 
 for (let nextButton of nextButtonsElement) {
@@ -65,4 +65,5 @@ const riskStageElement = document.getElementById('range_riskStage');
 
 function showValue(newValue) {
   document.getElementById('riskStage').innerHTML = newValue;
+  calculateMonthlySavings();
 }
