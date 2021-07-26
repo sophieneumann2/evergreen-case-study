@@ -1,25 +1,48 @@
 /*font-family: 'Lato', sans-serif;
 font-family: 'Playfair Display', serif;*/
 html {
-  background-color: rgb(245, 244, 248);
+  /*background-color: rgb(245, 244, 248);*/
+  background: url(images/background1.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 body {
-  /*width: 80%;*/
-  background-color: rgb(245, 244, 248);
-  /*margin: 0 auto;*/
+  background: transparent;
   font-family: 'Lato', sans-serif;
+  font-size: large;
+}
+
+button {
+  font-size: inherit;
+}
+input {
+  font-size: inherit;
 }
 
 .btn {
-  margin: 2rem 1rem 0 0;
+  margin: 1em 1em 1em 0;
   background-color: rgb(113, 201, 177);
   border-color: rgb(113, 201, 177);
   border-width: 0.1em;
   color: rgb(61, 68, 72);
   border-radius: 2em;
-  padding-left: 2em;
-  padding-right: 2em;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+@media (min-width: 800px) {
+  .btn {
+    margin: 2em 2em 2em 0;
+    padding-left: 2em;
+    padding-right: 2em;
+  }
 }
 
 .btn:hover {
@@ -55,94 +78,231 @@ body {
   color: rgb(61, 68, 72);
 }
 
-#div-start {
-  background: rgb(245, 244, 248);
+.btn-show-me-more {
+  margin: 0;
+  padding: 0 0.5em;
+}
+
+#tool-background {
+  height: 30rem;
   width: 80%;
-  margin: 5em auto 10em auto;
+  margin: 5em auto;
+  height: fit-content;
 }
 
-#div-start > div {
-  padding: 2em;
-  background: rgb(67, 56, 113);
-  border-radius: 1em;
-  height: 35rem;
+@media (min-width: 1200px) {
+  #tool-background {
+    height: 40rem;
+  }
 }
 
-#div-start > div > h1 {
-  font-family: 'Playfair Display', serif;
-  color: rgb(245, 244, 248);
-}
-
-#div-start > div > p {
-  color: rgb(245, 244, 248);
-}
-
+#scn-start,
 #scn-configurePersonalData {
-  width: 80%;
-  margin: 5em auto 10em auto;
+  padding: 1em;
   background: rgb(67, 56, 113);
+  height: 100%;
+  width: 100%;
   color: rgb(245, 244, 248);
-  border-radius: 1em;
-  height: 35rem;
-  scroll-behavior: smooth;
+}
+
+h1,
+h2 {
+  font-family: 'Playfair Display', serif;
+}
+
+h1 {
+  font-size: 1.3em;
+}
+
+p {
+  font-size: 0.7em;
+}
+
+@media (min-width: 375px) {
+  h1 {
+    font-size: 2em;
+  }
+  p {
+    font-size: 1em;
+  }
+}
+
+@media (min-width: 800px) {
+  h1 {
+    font-size: 3em;
+  }
+  p {
+    font-size: 1.1em;
+  }
+}
+
+@media (min-width: 1154px) {
+  h1 {
+    font-size: 4em;
+  }
+  p {
+    font-size: 1.2em;
+  }
+}
+
+#scn-start {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#scn-start > p {
+  line-height: 2;
+  width: 80%;
+  padding: 1em 0;
+}
+
+@media (min-width: 800px) {
+  #scn-start {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
 }
 
 #scn-configurePersonalData > div {
-  padding: 2rem;
+  height: 90%;
+}
+#scn-configurePersonalData > div > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 90%;
 }
 
-#div-explanations {
-  padding: 0 8em 0 8em;
+@media (min-width: 375px) {
+  #scn-configurePersonalData > div > div {
+    justify-content: space-between;
+  }
+}
+
+#scn-configurePersonalData > div > div > div > p {
+  padding: 1.5em 0 0.1em 0;
+}
+
+#scn-configurePersonalData .row {
+  height: 3rem;
 }
 
 #scn-calculatedData {
-  background: rgb(245, 244, 248);
+  /*background: rgb(245, 244, 248);*/
+  background-color: rgb(170, 159, 212);
+  border: 1em solid rgb(67, 56, 113);
+  width: 100%;
+  height: 100%;
+  padding: 2em;
 }
 
-#scn-calculatedData > div > div > div > img {
+#scn-calculatedData > div {
+  width: 100%;
+  height: 100%;
+  padding: 0 1em;
+}
+
+#scn-calculatedData > div > div:nth-child(1) {
+  width: 60%;
+  height: 100%;
+}
+#scn-calculatedData > div > div:nth-child(2) {
+  width: 35%;
+  height: 100%;
+  border-left: 0.1em solid rgb(67, 56, 113);
+  padding-left: 2em;
+}
+
+#scn-calculatedData > div > div > div {
+  width: 100%;
+}
+
+#scn-calculatedData .btn {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+#scn-explanation {
+  background-color: rgba(200, 250, 237, 0.2);
+  border: 1em solid rgb(113, 201, 177);
+  width: 100%;
+  height: 100%;
+  padding: 2em;
+}
+
+#div-explanations {
+  flex-direction: column;
+}
+
+@media (min-width: 576px) {
+  #div-explanations {
+    flex-direction: row;
+  }
+}
+
+#div-explanations > div > div > p {
+  font-size: 1em;
+}
+
+#div-explanations > div {
+  margin-bottom: 1em;
+}
+
+#div-explanations > div > div {
+  width: 95%;
+  height: 95%;
+  opacity: 0;
+  animation-name: fadeIn;
+  animation-duration: 3s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  border-radius: 1em;
+  border: 1px solid rgb(113, 201, 177);
+  padding: 0.5em;
+  margin: auto auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+@media (min-width: 800px) {
+  #div-explanations > div > div > p {
+    font-size: 1.1em;
+  }
+}
+
+#div-explanations > div > div > img {
   width: 100px;
   height: auto;
 }
 
-#scn-callToAction {
-  background-color: rgb(170, 159, 212);
-  color: rgb(6, 23, 17);
-  padding: 3em 3em 3em 5em;
+.explanation-topic {
+  width: 100%;
 }
 
-#div-callToAction {
-  background-color: rgb(170, 159, 212);
-  color: rgb(6, 23, 17);
-  padding-bottom: 3em;
+#div-explanations > div:hover {
+  transition: all 0.25s ease-in-out;
+  background-color: rgba(173, 255, 217, 0.3);
+  transform: scale(1.1);
 }
 
-#explainCalculations {
-  padding-bottom: 3em;
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
 
 #heading,
 .heading3-dark {
   font-family: 'Playfair Display', serif;
-}
-
-#img-person-sitting-1 {
-  position: absolute;
-  z-index: 10;
-  top: 105px;
-  right: 50px;
-  width: 400px;
-  height: auto;
-}
-
-.bar-green {
-  height: 20px;
-  width: 100%;
-  margin: 0;
-  margin-bottom: 4em;
-  position: relative;
-  left: -20rem;
-  background-color: rgb(35, 204, 159);
-  animation: move-in-from-left 3s ease 1;
 }
 
 .subheading {
@@ -156,4 +316,152 @@ body {
   100% {
     transform: translateX(0px);
   }
+}
+
+.hidden {
+  display: none;
+}
+.hidden.open {
+  display: block;
+}
+
+.explanation {
+  opacity: 0;
+  animation-name: scaleIn;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  color: rgb(83, 84, 85);
+  font-size: 0.9em;
+}
+
+@keyframes scaleIn {
+  0% {
+    height: 0em;
+    opacity: 0;
+  }
+
+  100% {
+    height: 3em;
+    opacity: 1;
+  }
+}
+
+input[type='range']::-webkit-slider-thumb {
+  background: rgb(67, 56, 113);
+}
+
+input[type='range']::-webkit-slider-thumb:active,
+input[type='range']::-webkit-slider-thumb:hover {
+  background: rgb(35, 204, 159);
+  transition: 0.1s ease-in;
+  transform: scale(1.2);
+}
+
+label:not(.form-check-label),
+.form-control::placeholder,
+#region {
+  color: rgb(67, 56, 113);
+}
+
+.form-control,
+.form-select,
+.input-group-text {
+  height: 2em;
+  line-height: 1em;
+}
+
+@media (min-width: 375px) {
+  .form-control,
+  .form-select,
+  .input-group-text {
+    height: 2.8em;
+  }
+}
+
+@media (min-width: 800px) {
+  .form-control,
+  .form-select,
+  .input-group-text {
+    height: 3.6em;
+  }
+}
+
+.form-control:active,
+.form-control:focus,
+.form-control:focus:active,
+.form-select:active,
+.form-select:focus,
+.form-select:focus:active {
+  box-shadow: none;
+  box-shadow: 0 0 5px 1px rgba(113, 201, 177, 0.8);
+  border-color: rgb(113, 201, 177);
+}
+
+.form-check {
+  padding: 0.5em;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: flex-end;
+  margin-left: 1em;
+}
+
+.form-check-label {
+  padding-left: 1em;
+}
+
+.form-check-input {
+  width: 1.5em;
+  height: 1.5em;
+}
+.form-check-input:active,
+.form-check-input:focus,
+.form-check-input:focus:active,
+.form-check-input:checked {
+  background-color: rgb(36, 194, 152);
+  border-color: rgb(36, 194, 152);
+}
+
+#graph-results {
+  overflow: hidden;
+  width: 0%;
+  opacity: 0;
+  display: flex;
+  animation: drawGraph 1.5s ease forwards;
+  height: 4em;
+  margin: 2em 0;
+}
+
+@keyframes drawGraph {
+  0% {
+    width: 0;
+    opacity: 0;
+  }
+
+  100% {
+    width: 100%;
+    opacity: 1;
+  }
+}
+
+#draw-retirement {
+  background-color: #581845;
+  height: 100%;
+  width: 60%;
+  display: block;
+  color: rgb(245, 244, 248);
+}
+#draw-retirementGap {
+  background-color: #ff5733;
+  height: 100%;
+  width: 40%;
+  display: block;
+  color: rgb(245, 244, 248);
+}
+
+#retirementGoal,
+#retirementBrutto,
+#retirementGap {
+  font-size: 2em;
 }

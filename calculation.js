@@ -15,13 +15,26 @@ const setDesiredRetirementElement = document.getElementById(
 );
 const evalDesiredRetirementElement = document.getElementById('retirementGoal');
 const retirementBruttoElement = document.getElementById('retirementBrutto');
-const retirementNettoElement = document.getElementById('retirementNetto');
 const retirementGapElement = document.getElementById('retirementGap');
+
+const inputDataElement = [
+  yearOfBirthElement,
+  ageOfRetirementElement,
+  workStartElement,
+  setDesiredRetirementElement
+];
+
+function checkForEmptyData() {
+  inputDataElement.forEach((data) => {
+    if (!data.value) {
+      data.value = '0';
+    }
+  });
+}
 
 const averageYearlySalary = 40551;
 let entgeltpunkte = 0;
 let retirementBrutto = 0;
-let retirementNetto = 0;
 let retirementGap = 0;
 let ageOfRetirement = 0;
 let workStart = 0;
@@ -53,6 +66,9 @@ function calculateRetirement() {
     entgeltpunkte = (yearPoints * salaryMonthly * 12) / averageYearlySalary;
   }
   entgeltpunkte = entgeltpunkte.toFixed(3);
+  if (isNaN(entgeltpunkte)) {
+    entgeltpunkte = 0;
+  }
 
   // Calculate Zugangsfaktor
   if (ageOfRetirement == 67) {
@@ -60,8 +76,10 @@ function calculateRetirement() {
   } else if (ageOfRetirement < 67) {
     zugangsfaktor = 1 - (67 - ageOfRetirement) * 0.003 * 12;
     if (zugangsfaktor < 0.892) zugangsfaktor = 0.892;
-  } else {
+  } else if (ageOfRetirement > 67) {
     zugangsfaktor = 1 + (ageOfRetirement - 67) * 0.005 * 12;
+  } else {
+    zugangsfaktor = 0;
   }
 
   // Calculate Bruttorente
@@ -70,15 +88,17 @@ function calculateRetirement() {
     regionFactor = 33.47;
   } else if (regionElement.value == 'west') {
     regionFactor = 34.19;
+  } else {
+    regionFactor = 0;
   }
 
   retirementBrutto = entgeltpunkte * zugangsfaktor * regionFactor;
   retirementGap = retirementGoal - retirementBrutto;
-
-  evalDesiredRetirementElement.innerText = setDesiredRetirementElement.value;
-  retirementBruttoElement.innerText = retirementBrutto.toFixed(2);
-  retirementNettoElement.innerText = (retirementBrutto - 100).toFixed(2);
-  retirementGapElement.innerText = retirementGap.toFixed(2);
+  evalDesiredRetirementElement.innerText = Math.round(
+    setDesiredRetirementElement.value
+  );
+  retirementBruttoElement.innerText = Math.round(retirementBrutto);
+  retirementGapElement.innerText = Math.round(retirementGap);
 }
 
 const monthlySavingRateElement = document.getElementById('monthlySavingRate');
@@ -90,9 +110,9 @@ let currentRiskStage = 0;
 function calculateMonthlySavings() {
   yearsOfRetirement = livingExpectationYears - ageOfRetirement;
   yearsOfSaving = ageOfRetirement - (currentYear - yearOfBirth);
-  currentRiskStage = document.getElementById('riskStage').innerHTML;
+  currentRiskStage = document.querySelector('.riskStage').innerHTML;
   monthlySavingRate = Math.round(
-    (yearsOfRetirement * retirementGap.toFixed(2)) /
+    (yearsOfRetirement * Math.round(retirementBrutto)) /
       (yearsOfSaving * currentRiskStage)
   );
   monthlySavingRateElement.innerText = monthlySavingRate;

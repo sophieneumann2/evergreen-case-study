@@ -10,330 +10,479 @@
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
       crossorigin="anonymous"
     />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Playfair+Display:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="style.css" />
     <title>Rentenlücke berechnen</title>
   </head>
   <body>
-    <div id="div-start">
-      <div class="jumbotron">
-        <h1 class="display-4">Jetzt Rentenlücke berechnen</h1>
-        <p class="lead">
-          This is a simple hero unit, a simple jumbotron-style component for
-          calling extra attention to featured content or information.
+    <div id="tool-background">
+      <section id="scn-start">
+        <h1 class="text-center">Jetzt Rentenlücke berechnen</h1>
+        <p class="text-center">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae et ea
+          omnis aliquid laborum odio optio similique ratione debitis vero
+          tenetur dolorum accusantium ipsa culpa sunt, consectetur amet soluta?
+          Facere?
         </p>
-        <hr class="my-4" />
-        <p>
-          It uses utility classes for typography and spacing to space content
-          out within the larger container.
-        </p>
+
         <div class="d-flex flex-row justify-content-center">
-          <button type="button" class="btn btn-primary btn-lg" id="btn-start">
-            Start
-          </button>
+          <button type="button" class="btn btn-lg" id="btn-start">Start</button>
         </div>
-      </div>
-    </div>
+      </section>
 
-    <section id="scn-configurePersonalData" style="display: none">
-      <div>
-        <h1 id="heading" style="display: none">Rentenlücke berechnen</h1>
-        <img src="/images/example.png" alt="" id="img-person-sitting-1" />
-        <div id="div-birth" style="display: none">
-          <p>In welchem Jahr wurdest du geboren?</p>
-          <div class="row">
-            <div class="form-floating mb-3 col-sm-6 col-md-4 col-lg-3">
-              <input
-                type="number"
-                class="form-control"
-                id="yearOfBirth"
-                placeholder="1999"
-              />
-              <label for="floatingInput">Geburtsjahr</label>
-            </div>
-          </div>
-
-          <button type="button" class="btn btn-primary btn-next">Weiter</button>
-        </div>
-
-        <div id="div-workSettings" style="display: none">
-          <p>In welchem Jahr hast du begonnen, zu arbeiten?</p>
-          <div class="row">
-            <div class="form-floating mb-3 col-sm-6 col-md-4 col-lg-3">
-              <input
-                type="number"
-                class="form-control"
-                id="workstart-year"
-                placeholder="2000"
-              />
-              <label for="floatingInput">Berufseintrittsjahr</label>
-            </div>
-          </div>
-
-          <p>Wie hoch war dein letztes monatliches Bruttoeinkommen?</p>
-          <div class="row">
-            <div class="col-sm-6 col-md-4 col-lg-3">
-              <div class="input-group">
-                <input
-                  type="number"
-                  class="form-control"
-                  id="salary-monthly"
-                  placeholder="monatliches Bruttoeinkommen"
-                  aria-label="Dollar amount (with dot and two decimal places)"
-                />
-                <span class="input-group-text">€</span>
+      <section id="scn-configurePersonalData" style="display: none">
+        <div>
+          <h1 id="heading" style="display: none">Rentenlücke berechnen</h1>
+          <div id="div-birth" style="display: none">
+            <div>
+              <p>In welchem Jahr wurdest du geboren?</p>
+              <div class="row">
+                <div class="form-floating col-sm-12 col-lg-8 col-xl-6">
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="yearOfBirth"
+                    placeholder="0"
+                    min="0"
+                    max="2200"
+                    step="1"
+                    required
+                  />
+                  <label for="floatingInput">Geburtsjahr</label>
+                </div>
               </div>
             </div>
+
+            <div
+              class="d-flex flex-row justify-content-start align-items-center"
+            >
+              <button type="button" class="btn btn-next">Weiter</button>
+            </div>
           </div>
 
-          <p>In welchem Teil Deutschlands arbeitest Du überwiegend?</p>
-          <div class="row">
-            <div class="col-sm-6 col-md-4 col-lg-3">
-              <select
-                class="form-select"
-                id="region"
-                aria-label="Default select example"
+          <div id="div-workSettings" style="display: none">
+            <div>
+              <p>In welchem Jahr hast du begonnen, zu arbeiten?</p>
+              <div class="row">
+                <div class="form-floating col-sm-12 col-lg-8 col-xl-6">
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="workstart-year"
+                    placeholder="0"
+                    min="0"
+                    max="2200"
+                    step="1"
+                    required
+                  />
+                  <label for="floatingInput">Berufseintrittsjahr</label>
+                </div>
+              </div>
+
+              <p>Wie hoch war dein letztes monatliches Bruttoeinkommen?</p>
+              <div class="row">
+                <div class="col-sm-12 col-lg-8 col-xl-6">
+                  <div class="input-group">
+                    <input
+                      type="number"
+                      class="form-control"
+                      id="salary-monthly"
+                      placeholder="monatliches Bruttoeinkommen"
+                      min="0"
+                      max="10000000"
+                      step="1"
+                      required
+                    />
+                    <span class="input-group-text">€</span>
+                  </div>
+                </div>
+              </div>
+
+              <p>In welchem Teil Deutschlands arbeitest Du überwiegend?</p>
+              <div class="row">
+                <div class="col-sm-12 col-lg-8 col-xl-6">
+                  <select class="form-select" id="region" required>
+                    <option value="" disabled selected>
+                      Bitte Region auswählen
+                    </option>
+                    <option value="east">Ost</option>
+                    <option value="west">West</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="d-flex flex-row justify-content-start">
+              <button type="button" class="btn btn-previous">Zurück</button>
+              <button type="button" class="btn btn-next">Weiter</button>
+            </div>
+          </div>
+
+          <div id="div-retirementSettings" style="display: none">
+            <div>
+              <p>In welchem Alter möchtest du in Rente gehen?</p>
+
+              <div class="row">
+                <div class="form-floating col-sm-12 col-lg-8 col-xl-6">
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="ageOfRetirement"
+                    placeholder="0"
+                    min="0"
+                    max="100"
+                    step="1"
+                    required
+                  />
+                  <label for="floatingInput"
+                    >geplantes Renteneintrittsalter</label
+                  >
+                </div>
+              </div>
+
+              <p>Wie viel Rente möchtest Du monatlich erhalten (brutto)?</p>
+              <div class="row">
+                <div class="col-sm-12 col-lg-8 col-xl-6">
+                  <div class="input-group">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="val-desiredRetirement"
+                      placeholder="monatliche Wunschrente"
+                      min="0"
+                      max="10000000"
+                      step="1"
+                      required
+                    />
+                    <span class="input-group-text">€</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="d-flex flex-row justify-content-start">
+              <button type="button" class="btn btn-previous">Zurück</button>
+              <button type="button" class="btn btn-next">Weiter</button>
+            </div>
+          </div>
+
+          <div id="div-retirementFurtherSettings" style="display: none">
+            <div>
+              <p>
+                Sollen wir die Inflation und/oder Deine jährliche
+                Gehaltssteigerung berücksichtigen?
+              </p>
+
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  value=""
+                  id="checkInflation"
+                />
+                <label class="form-check-label" for="flexCheckDefault">
+                  Inflation 1.9 %
+                </label>
+              </div>
+
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  value=""
+                  id="checkSalaryIncrease"
+                />
+                <label class="form-check-label" for="flexCheckDefault">
+                  Jährliche Gehaltssteigerung 2 %
+                </label>
+              </div>
+            </div>
+
+            <div class="d-flex flex-row justify-content-start">
+              <button type="button" class="btn btn-previous">Zurück</button>
+              <button type="button" class="btn" id="btn-doCalculation">
+                Rente berechnen
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="scn-calculatedData" style="display: none">
+        <div
+          class="d-flex flex-row justify-content-between align-items-start row"
+        >
+          <div
+            class="
+              d-flex
+              flex-column
+              col-sm-12 col-md-6
+              justify-content-between
+              align-items-center
+            "
+          >
+            <h2>Deine Rente</h2>
+            <p class="text-center">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos
+              recusandae dolores consectetur. Repellat maiores corrupti
+              doloremque nihil sunt laudantium perspiciatis?
+            </p>
+            <div class="d-flex flex-row justify-content-between">
+              <div
+                class="
+                  d-flex
+                  flex-column
+                  align-items-center
+                  text-center
+                  justify-content-center
+                "
               >
-                <option selected>Optionen anzeigen</option>
-                <option value="east">Ost</option>
-                <option value="west">West</option>
-              </select>
+                <p class="mb-0"><span id="retirementGoal"></span> €</p>
+                <p>Wunschrente</p>
+              </div>
+              <div
+                class="
+                  d-flex
+                  flex-column
+                  align-items-center
+                  text-center
+                  justify-content-center
+                "
+              >
+                <p class="mb-0"><span id="retirementBrutto"></span> €</p>
+                <p>Gesetzliche Rente</p>
+              </div>
+              <div
+                class="
+                  d-flex
+                  flex-column
+                  align-items-center
+                  text-center
+                  justify-content-center
+                "
+              >
+                <p class="mb-0"><span id="retirementGap"></span> €</p>
+                <p>Rentenlücke</p>
+              </div>
             </div>
-          </div>
-
-          <button type="button" class="btn btn-primary btn-previous">
-            Zurück
-          </button>
-          <button type="button" class="btn btn-primary btn-next">Weiter</button>
-        </div>
-
-        <div id="div-retirementSettings" style="display: none">
-          <p>In welchem Alter möchtest du in Rente gehen?</p>
-
-          <div class="row">
-            <div class="form-floating mb-3 col-sm-6 col-md-4 col-lg-3">
-              <input
-                type="number"
-                class="form-control"
-                id="ageOfRetirement"
-                placeholder="67"
-              />
-              <label for="floatingInput">geplantes Renteneintrittsalter</label>
+            <div id="graph-results">
+              <div
+                id="draw-retirement"
+                class="d-flex justify-content-center align-items-center"
+              >
+                1000€
+              </div>
+              <div
+                id="draw-retirementGap"
+                class="d-flex justify-content-center align-items-center"
+              >
+                1000€
+              </div>
             </div>
-          </div>
-
-          <p>Wie viel Rente möchtest Du monatlich erhalten (brutto)?</p>
-          <div class="row">
-            <div class="col-sm-6 col-md-4 col-lg-3">
-              <div class="input-group">
-                <input
-                  type="text"
-                  class="form-control"
-                  id="val-desiredRetirement"
-                  placeholder="monatliche Wunschrente (netto)"
-                  aria-label="Dollar amount (with dot and two decimal places)"
-                />
-                <span class="input-group-text">€</span>
+            <div>
+              <div
+                class="
+                  d-flex
+                  flex-row
+                  justify-content-between
+                  align-items-center
+                "
+              >
+                <button type="button" class="btn btn-previous-scn">
+                  Eingaben verändern
+                </button>
+                <button id="btn-explanation" class="btn">
+                  Wie wird meine Rente berechnet?
+                </button>
               </div>
             </div>
           </div>
-          <button type="button" class="btn btn-primary btn-previous">
-            Zurück
-          </button>
-          <button type="button" class="btn btn-primary btn-next">Weiter</button>
-        </div>
+          <div
+            class="
+              d-flex
+              flex-column
+              justify-content-between
+              align-items-center
+              col-sm-12 col-md-6
+            "
+            id="scn-callToAction"
+          >
+            <h3 class="heading3-dark">Call To Action</h3>
+            <p class="text-center">
+              Mit Evergreen kannst du auch im Alter deinen Lebensstandard
+              erhalten.
+            </p>
+            <p class="text-center">
+              Spare mit Evergreen
+              <span id="monthlySavingRate"></span> € bei Risikostufe
+              <span class="riskStage">6</span> bis zum Rentenbeginn.
+            </p>
 
-        <div id="div-retirementFurtherSettings" style="display: none">
-          <p>
-            Sollen wir die Inflation und/oder Deine jährliche Gehaltssteigerung
-            berücksichtigen?
-          </p>
-
-          <div class="form-check">
-            <input
-              class="form-check-input"
-              type="checkbox"
-              value=""
-              id="checkInflation"
-            />
-            <label class="form-check-label" for="flexCheckDefault">
-              Inflation 1.9 %
-            </label>
+            <div
+              class="
+                d-flex
+                flex-column
+                justify-content-center
+                align-items-center
+              "
+            >
+              <p>Risikostufe <span class="riskStage">6</span></p>
+              <input
+                type="range"
+                class="form-range"
+                min="1"
+                max="10"
+                step="1"
+                id="range_riskStage"
+                oninput="showValue(this.value)"
+                onchange="showValue(this.value)"
+              />
+            </div>
+            <div
+              class="d-flex flex-row justify-content-center"
+              id="div-callToAction"
+            >
+              <button type="button" class="btn btn-lg" id="btn-callToAction">
+                Jetzt vorsorgen
+              </button>
+            </div>
           </div>
+        </div>
+      </section>
 
-          <div class="form-check">
-            <input
-              class="form-check-input"
-              type="checkbox"
-              value=""
-              id="checkSalaryIncrease"
-            />
-            <label class="form-check-label" for="flexCheckDefault">
-              Jährliche Gehaltssteigerung 2 %
-            </label>
-          </div>
-          <button type="button" class="btn btn-primary btn-previous">
-            Zurück
-          </button>
-          <button type="button" class="btn btn-danger" id="btn-doCalculation">
-            Rente berechnen
+      <section class="mt-5" id="scn-explanation" style="display: none">
+        <div
+          class="
+            d-flex
+            flex-row
+            justify-content-between
+            align-items-center
+            container
+          "
+        >
+          <h3 class="heading3-dark" style="display: inline">
+            So berechnen wir Deine Rente
+          </h3>
+          <button type="button" class="btn btn-previous-scn">
+            Zurück zur Übersicht
           </button>
         </div>
-      </div>
-    </section>
-
-    <section class="mt-5" id="scn-calculatedData" style="display: none">
-      <div class="bar-green"></div>
-      <div id="div-explanations">
-        <h3 class="heading3-dark">So berechnen wir Deine Rente</h3>
         <p>
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur
           porro esse repellendus nam deserunt commodi quaerat autem, vero culpa
           amet sunt at placeat earum omnis laboriosam cupiditate! Soluta, alias
-          possimus. Libero vitae quisquam alias possimus nihil repellendus
-          voluptates veritatis aliquid quidem asperiores eaque, doloribus
-          maiores architecto porro tenetur explicabo rem, accusamus dolores vel.
+          possimus.
         </p>
 
         <div
-          class="d-flex flex-row justify-content-evenly align-items-center"
-          id="explainCalculations"
+          id="div-explanations"
+          class="d-flex justify-content-between align-items-center row"
         >
-          <div class="me-5 d-flex flex-column align-items-center">
-            <img src="images/icon-example.png" alt="" />
-            <p class="subheading">Entgeltpunkte</p>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime,
-              error!
-            </p>
-          </div>
+          <div class="change-opacity col-sm-12 col-lg-6 col-xl-3">
+            <div>
+              <img src="images/icon-example.png" alt="" />
+              <h5 class="subheading">Entgeltpunkte</h5>
 
-          <div class="me-5 d-flex flex-column align-items-center">
-            <img src="images/icon-example.png" alt="" />
-            <p class="subheading">Renteneintrittsalter</p>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime,
-              error!
-            </p>
-          </div>
-
-          <div class="me-5 d-flex flex-column align-items-center">
-            <img src="images/icon-example.png" alt="" />
-            <p class="subheading">Ort (Ost/West)</p>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime,
-              error!
-            </p>
-          </div>
-
-          <div class="d-flex flex-column align-items-center">
-            <img src="images/icon-example.png" alt="" />
-            <p class="subheading">Weitere Faktoren</p>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime,
-              error!
-            </p>
-          </div>
-        </div>
-      </div>
-      <div class="row" id="scn-callToAction">
-        <div class="col-12">
-          <div class="row">
-            <table class="col-3">
-              <tr>
-                <td class="pe-5">Wunschrente</td>
-                <td><span id="retirementGoal"></span> €</td>
-              </tr>
-              <tr>
-                <td>Bruttorente</td>
-                <td><span id="retirementBrutto"></span> €</td>
-              </tr>
-              <tr>
-                <td>Nettorente</td>
-                <td><span id="retirementNetto"></span> €</td>
-              </tr>
-              <tr>
-                <td>Rentenlücke</td>
-                <td><span id="retirementGap"></span> €</td>
-              </tr>
-            </table>
-
-            <div class="col-3">
-              <canvas id="chart" height="300px"></canvas>
-            </div>
-
-            <div class="col-5">
-              <h3 class="heading3-dark">Call To Action</h3>
               <p>
-                Hier kann man noch hinschreiben, welche Evergreen-Anlagen
-                möglich wären, um die Rentenlücke in den bestehenden Jahren zu
-                füllen. z.B. Risikostufen anzeigen und wie viel man damit
-                monatlich ansparen müsste
+                Lorem ipsum dolor
+                <button class="btn btn-show-me-more">?</button> sit amet,
+                consectetur adipisicing
+                <button class="btn btn-show-me-more">?</button> elit.
               </p>
-              <div class="row d-flex flex-row align-items-center">
-                <div
-                  class="
-                    col-6
-                    d-flex
-                    flex-column
-                    justify-content-center
-                    align-items-center
-                  "
-                >
-                  <p>Risikostufe <span id="riskStage">6</span></p>
-                  <!--<div class="mb-3 row">
-                      <div class="col-4">Risikostufe</div>
-                      <div class="col-2" id="riskStage">6</div>
-                    </div>-->
-                  <input
-                    type="range"
-                    class="form-range"
-                    min="1"
-                    max="10"
-                    step="1"
-                    id="range_riskStage"
-                    oninput="showValue(this.value)"
-                    onchange="showValue(this.value)"
-                  />
-                </div>
 
-                <div
-                  class="
-                    col-6
-                    d-flex
-                    flex-column
-                    justify-content-center
-                    align-items-center
-                  "
-                >
-                  <p class="text-center">
-                    Monatliche Sparrate bis zum Rentenbeginn
-                  </p>
-                  <p><span id="monthlySavingRate"></span> €</p>
-                </div>
+              <div class="explanation-topic">
+                <p class="explanation hidden">
+                  Erklärung 1 ratione minima tempora incidunt.
+                </p>
+                <p class="explanation hidden">
+                  Erklärung 2 praesentium ipsum ad perspiciatis?
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="change-opacity col-sm-12 col-lg-6 col-xl-3">
+            <div>
+              <img src="images/icon-example.png" alt="" />
+              <h5 class="subheading">Renteneintrittsalter</h5>
+
+              <p>
+                Lorem ipsum dolor
+                <button class="btn btn-show-me-more">?</button> sit amet,
+                consectetur adipisicing
+                <button class="btn btn-show-me-more">?</button> elit.
+              </p>
+
+              <div class="explanation-topic">
+                <p class="explanation hidden">
+                  Erklärung 1 ratione minima tempora incidunt.
+                </p>
+                <p class="explanation hidden">
+                  Erklärung 2 praesentium ipsum ad perspiciatis?
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="change-opacity col-sm-12 col-lg-6 col-xl-3">
+            <div>
+              <img src="images/icon-example.png" alt="" />
+              <h5 class="subheading">Ort (Ost/West)</h5>
+
+              <p>
+                Lorem ipsum dolor
+                <button class="btn btn-show-me-more">?</button> sit amet,
+                consectetur adipisicing
+                <button class="btn btn-show-me-more">?</button> elit.
+              </p>
+
+              <div class="explanation-topic">
+                <p class="explanation hidden">
+                  Erklärung 1 ratione minima tempora incidunt.
+                </p>
+                <p class="explanation hidden">
+                  Erklärung 2 praesentium ipsum ad perspiciatis?
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="change-opacity col-sm-12 col-lg-6 col-xl-3">
+            <div>
+              <img src="images/icon-example.png" alt="" />
+              <h5 class="subheading">Weitere Faktoren</h5>
+
+              <p>
+                Lorem ipsum dolor
+                <button class="btn btn-show-me-more">?</button> sit amet,
+                consectetur adipisicing
+                <button class="btn btn-show-me-more">?</button> elit.
+              </p>
+
+              <div class="explanation-topic">
+                <p class="explanation hidden">
+                  Erklärung 1 ratione minima tempora incidunt.
+                </p>
+                <p class="explanation hidden">
+                  Erklärung 2 praesentium ipsum ad perspiciatis?
+                </p>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="d-flex flex-row justify-content-center" id="div-callToAction">
-        <button
-          type="button"
-          class="btn btn-primary btn-lg"
-          id="btn-callToAction"
-        >
-          Jetzt vorsorgen
-        </button>
-      </div>
-    </section>
+      </section>
+    </div>
+
     <script src="main.js"></script>
     <script src="calculation.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.3.0/Chart.min.js"></script>
     <script src="drawRetirementChart.js"></script>
   </body>
 </html>
