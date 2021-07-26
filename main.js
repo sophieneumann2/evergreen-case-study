@@ -128,5 +128,3 @@ showMoreButtonElements.forEach((button) => {
     possibleExplanationElements[indexButton].classList.toggle('open');
   });
 });
-
-//Manipulate Grid Breakpoints in explanation section
