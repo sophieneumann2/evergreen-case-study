@@ -36,182 +36,216 @@
         <div class="d-flex flex-row justify-content-center">
           <button type="button" class="btn btn-lg" id="btn-start">Start</button>
         </div>
+        <!--<img src="images/page1.png" alt="sofa with cat" />-->
       </section>
 
       <section id="scn-configurePersonalData" style="display: none">
-        <div>
-          <h1 id="heading" style="display: none">Rentenlücke berechnen</h1>
-          <div id="div-birth" style="display: none">
-            <div>
-              <p>In welchem Jahr wurdest du geboren?</p>
-              <div class="row">
-                <div class="form-floating col-sm-12 col-lg-8 col-xl-6">
-                  <input
-                    type="number"
-                    class="form-control"
-                    id="yearOfBirth"
-                    placeholder="0"
-                    min="0"
-                    max="2200"
-                    step="1"
-                    required
-                  />
-                  <label for="floatingInput">Geburtsjahr</label>
-                </div>
-              </div>
-            </div>
-
-            <div
-              class="d-flex flex-row justify-content-start align-items-center"
-            >
-              <button type="button" class="btn btn-next">Weiter</button>
-            </div>
-          </div>
-
-          <div id="div-workSettings" style="display: none">
-            <div>
-              <p>In welchem Jahr hast du begonnen, zu arbeiten?</p>
-              <div class="row">
-                <div class="form-floating col-sm-12 col-lg-8 col-xl-6">
-                  <input
-                    type="number"
-                    class="form-control"
-                    id="workstart-year"
-                    placeholder="0"
-                    min="0"
-                    max="2200"
-                    step="1"
-                    required
-                  />
-                  <label for="floatingInput">Berufseintrittsjahr</label>
-                </div>
-              </div>
-
-              <p>Wie hoch war dein letztes monatliches Bruttoeinkommen?</p>
-              <div class="row">
-                <div class="col-sm-12 col-lg-8 col-xl-6">
-                  <div class="input-group">
+        <h1 id="heading" style="display: none">Rentenlücke berechnen</h1>
+        <div class="row">
+          <div class="col-md-12 col-lg-6">
+            <div id="div-birth" style="display: none">
+              <div>
+                <p>In welchem Jahr wurdest du geboren?</p>
+                <div class="row">
+                  <div class="form-floating col-sm-12 col-lg-8 col-xl-6">
                     <input
                       type="number"
                       class="form-control"
-                      id="salary-monthly"
-                      placeholder="monatliches Bruttoeinkommen"
+                      id="yearOfBirth"
+                      placeholder="0"
                       min="0"
-                      max="10000000"
+                      max="2200"
                       step="1"
                       required
                     />
-                    <span class="input-group-text">€</span>
+                    <label for="floatingInput">Geburtsjahr</label>
                   </div>
                 </div>
               </div>
 
-              <p>In welchem Teil Deutschlands arbeitest Du überwiegend?</p>
-              <div class="row">
-                <div class="col-sm-12 col-lg-8 col-xl-6">
-                  <select class="form-select" id="region" required>
-                    <option value="" disabled selected>
-                      Bitte Region auswählen
-                    </option>
-                    <option value="east">Ost</option>
-                    <option value="west">West</option>
-                  </select>
-                </div>
+              <div
+                class="d-flex flex-row justify-content-start align-items-center"
+              >
+                <button type="button" class="btn btn-next">Weiter</button>
               </div>
             </div>
 
-            <div class="d-flex flex-row justify-content-start">
-              <button type="button" class="btn btn-previous">Zurück</button>
-              <button type="button" class="btn btn-next">Weiter</button>
-            </div>
-          </div>
-
-          <div id="div-retirementSettings" style="display: none">
-            <div>
-              <p>In welchem Alter möchtest du in Rente gehen?</p>
-
-              <div class="row">
-                <div class="form-floating col-sm-12 col-lg-8 col-xl-6">
-                  <input
-                    type="number"
-                    class="form-control"
-                    id="ageOfRetirement"
-                    placeholder="0"
-                    min="0"
-                    max="100"
-                    step="1"
-                    required
-                  />
-                  <label for="floatingInput"
-                    >geplantes Renteneintrittsalter</label
-                  >
-                </div>
-              </div>
-
-              <p>Wie viel Rente möchtest Du monatlich erhalten (brutto)?</p>
-              <div class="row">
-                <div class="col-sm-12 col-lg-8 col-xl-6">
-                  <div class="input-group">
+            <div id="div-workSettings" style="display: none">
+              <div>
+                <p>In welchem Jahr hast du begonnen, zu arbeiten?</p>
+                <div class="row">
+                  <div class="form-floating col-sm-12 col-lg-8 col-xl-6">
                     <input
-                      type="text"
+                      type="number"
                       class="form-control"
-                      id="val-desiredRetirement"
-                      placeholder="monatliche Wunschrente"
+                      id="workstart-year"
+                      placeholder="0"
                       min="0"
-                      max="10000000"
+                      max="2200"
                       step="1"
                       required
                     />
-                    <span class="input-group-text">€</span>
+                    <label for="floatingInput">Berufseintrittsjahr</label>
+                  </div>
+                </div>
+
+                <p>Wie hoch war dein letztes monatliches Bruttoeinkommen?</p>
+                <div class="row">
+                  <div class="col-sm-12 col-lg-8 col-xl-6">
+                    <div class="input-group">
+                      <input
+                        type="number"
+                        class="form-control"
+                        id="salary-monthly"
+                        placeholder="monatliches Bruttoeinkommen"
+                        min="0"
+                        max="10000000"
+                        step="1"
+                        required
+                      />
+                      <span class="input-group-text">€</span>
+                    </div>
+                  </div>
+                </div>
+
+                <p>In welchem Teil Deutschlands arbeitest Du überwiegend?</p>
+                <div class="row">
+                  <div class="col-sm-12 col-lg-8 col-xl-6">
+                    <select class="form-select" id="region" required>
+                      <option value="" disabled selected>
+                        Bitte Region auswählen
+                      </option>
+                      <option value="east">Ost</option>
+                      <option value="west">West</option>
+                    </select>
                   </div>
                 </div>
               </div>
+
+              <div class="d-flex flex-row justify-content-start">
+                <button type="button" class="btn btn-previous">Zurück</button>
+                <button type="button" class="btn btn-next">Weiter</button>
+              </div>
             </div>
 
-            <div class="d-flex flex-row justify-content-start">
-              <button type="button" class="btn btn-previous">Zurück</button>
-              <button type="button" class="btn btn-next">Weiter</button>
+            <div id="div-retirementSettings" style="display: none">
+              <div>
+                <p>In welchem Alter möchtest du in Rente gehen?</p>
+
+                <div class="row">
+                  <div class="form-floating col-sm-12 col-lg-8 col-xl-6">
+                    <input
+                      type="number"
+                      class="form-control"
+                      id="ageOfRetirement"
+                      placeholder="0"
+                      min="0"
+                      max="100"
+                      step="1"
+                      required
+                    />
+                    <label for="floatingInput"
+                      >geplantes Renteneintrittsalter</label
+                    >
+                  </div>
+                </div>
+
+                <p>Wie viel Rente möchtest Du monatlich erhalten (brutto)?</p>
+                <div class="row">
+                  <div class="col-sm-12 col-lg-8 col-xl-6">
+                    <div class="input-group">
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="val-desiredRetirement"
+                        placeholder="monatliche Wunschrente"
+                        min="0"
+                        max="10000000"
+                        step="1"
+                        required
+                      />
+                      <span class="input-group-text">€</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="d-flex flex-row justify-content-start">
+                <button type="button" class="btn btn-previous">Zurück</button>
+                <button type="button" class="btn btn-next">Weiter</button>
+              </div>
+            </div>
+
+            <div id="div-retirementFurtherSettings" style="display: none">
+              <div>
+                <p>
+                  Sollen wir die Inflation und/oder Deine jährliche
+                  Gehaltssteigerung berücksichtigen?
+                </p>
+
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    value=""
+                    id="checkInflation"
+                  />
+                  <label class="form-check-label" for="flexCheckDefault">
+                    Inflation 1.9 %
+                  </label>
+                </div>
+
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    value=""
+                    id="checkSalaryIncrease"
+                  />
+                  <label class="form-check-label" for="flexCheckDefault">
+                    Jährliche Gehaltssteigerung 2 %
+                  </label>
+                </div>
+              </div>
+
+              <div class="d-flex flex-row justify-content-start">
+                <button type="button" class="btn btn-previous">Zurück</button>
+                <button type="button" class="btn" id="btn-doCalculation">
+                  Rente berechnen
+                </button>
+              </div>
             </div>
           </div>
-
-          <div id="div-retirementFurtherSettings" style="display: none">
-            <div>
-              <p>
-                Sollen wir die Inflation und/oder Deine jährliche
-                Gehaltssteigerung berücksichtigen?
-              </p>
-
-              <div class="form-check">
-                <input
-                  class="form-check-input"
-                  type="checkbox"
-                  value=""
-                  id="checkInflation"
-                />
-                <label class="form-check-label" for="flexCheckDefault">
-                  Inflation 1.9 %
-                </label>
-              </div>
-
-              <div class="form-check">
-                <input
-                  class="form-check-input"
-                  type="checkbox"
-                  value=""
-                  id="checkSalaryIncrease"
-                />
-                <label class="form-check-label" for="flexCheckDefault">
-                  Jährliche Gehaltssteigerung 2 %
-                </label>
-              </div>
-            </div>
-
-            <div class="d-flex flex-row justify-content-start">
-              <button type="button" class="btn btn-previous">Zurück</button>
-              <button type="button" class="btn" id="btn-doCalculation">
-                Rente berechnen
-              </button>
-            </div>
+          <div id="div-img-sofa" class="col-md-12 col-lg-6">
+            <img src="images/page1.png" alt="sofa with cat" id="img-sofa-cat" />
+            <img
+              src="images/page2.png"
+              alt="old woman sitting on sofa"
+              id="img-first-woman"
+              class="opacity"
+              style="display: none"
+            />
+            <img
+              src="images/page3.png"
+              alt="old man in wheelchair"
+              id="img-man-in-wheelchair"
+              class="opacity"
+              style="display: none"
+            />
+            <img
+              src="images/page4.png"
+              alt="old woman sitting on sofa"
+              id="img-second-woman"
+              class="opacity"
+              style="display: none"
+            />
+            <img
+              src="images/page5.png"
+              alt="old woman sitting on sofa"
+              id="img-arm-of-second-woman"
+              class="opacity"
+              style="display: none"
+            />
           </div>
         </div>
       </section>

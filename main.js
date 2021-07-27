@@ -31,6 +31,10 @@ const allSectionElements = [
   explanationSectionElement
 ];
 
+const allImageElements = document
+  .getElementById('div-img-sofa')
+  .querySelectorAll('img');
+
 const startButtonElement = document.getElementById('btn-start');
 const calculateButtonElement = document.getElementById('btn-doCalculation');
 const explanationButtonElement = document.getElementById('btn-explanation');
@@ -80,6 +84,10 @@ for (let nextButton of nextButtonsElement) {
   nextButton.addEventListener('click', () => {
     currentDivDisplayed++;
     displayDiv(currentDivDisplayed, configurationElements);
+    allImageElements[currentDivDisplayed].style.display = '';
+    if (currentDivDisplayed == 3) {
+      allImageElements[currentDivDisplayed + 1].style.display = '';
+    }
   });
 }
 

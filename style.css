@@ -84,13 +84,12 @@ input {
 }
 
 #tool-background {
-  height: 30rem;
   width: 80%;
   margin: 5em auto;
   height: fit-content;
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1500px) {
   #tool-background {
     height: 40rem;
   }
@@ -168,8 +167,20 @@ p {
 
 #scn-configurePersonalData > div {
   height: 90%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
 }
-#scn-configurePersonalData > div > div {
+#scn-configurePersonalData > div > div:nth-child(1) {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+#scn-configurePersonalData > div > div > div {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -177,17 +188,13 @@ p {
 }
 
 @media (min-width: 375px) {
-  #scn-configurePersonalData > div > div {
+  #scn-configurePersonalData > div > div > div {
     justify-content: space-between;
   }
 }
 
-#scn-configurePersonalData > div > div > div > p {
+#scn-configurePersonalData > div > div > div > div > p {
   padding: 1.5em 0 0.1em 0;
-}
-
-#scn-configurePersonalData .row {
-  height: 3rem;
 }
 
 #scn-calculatedData {
@@ -360,6 +367,13 @@ p {
   }
 }
 
+.opacity {
+  animation-name: fadeIn;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
 #heading,
 .heading3-dark {
   font-family: 'Playfair Display', serif;
@@ -524,4 +538,60 @@ label:not(.form-check-label),
 #retirementBrutto,
 #retirementGap {
   font-size: 2em;
+}
+#div-img-sofa {
+  position: relative;
+  top: 0;
+  left: 0;
+  padding-top: 3em;
+  width: 100%;
+}
+
+#img-sofa-cat {
+  position: relative;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 80%;
+  height: auto;
+}
+
+#img-first-woman,
+#img-man-in-wheelchair,
+#img-second-woman,
+#img-arm-of-second-woman {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 80%;
+  height: auto;
+}
+
+@media (min-width: 992px) {
+  #div-img-sofa {
+    padding-top: 0;
+    padding-bottom: 3em;
+    width: 40%;
+  }
+
+  #img-sofa-cat,
+  #img-first-woman,
+  #img-man-in-wheelchair,
+  #img-second-woman,
+  #img-arm-of-second-woman {
+    width: 90%;
+  }
+}
+
+#img-first-woman {
+  z-index: 4;
+}
+#img-man-in-wheelchair {
+  z-index: 2;
+}
+#img-second-woman {
+  z-index: 5;
+}
+#img-arm-of-second-woman {
+  z-index: 3;
 }
