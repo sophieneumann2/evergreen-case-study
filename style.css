@@ -565,11 +565,12 @@ label:not(.form-check-label),
   left: 0;
   width: 80%;
   height: auto;
+  padding-top: 3em;
 }
 
 @media (min-width: 992px) {
   #div-img-sofa {
-    padding-top: 0;
+    padding-top: 0em;
     padding-bottom: 3em;
     width: 40%;
   }
@@ -580,6 +581,7 @@ label:not(.form-check-label),
   #img-second-woman,
   #img-arm-of-second-woman {
     width: 90%;
+    padding-top: 0em;
   }
 }
 
