@@ -2,7 +2,7 @@
 font-family: 'Playfair Display', serif;*/
 html {
   /*background-color: rgb(245, 244, 248);*/
-  background: url(images/background1.jpg) no-repeat center center fixed;
+  background: rgb(222, 252, 244);
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -91,17 +91,20 @@ input {
 
 @media (min-width: 1500px) {
   #tool-background {
-    height: 40rem;
+    height: 44rem;
   }
 }
 
 #scn-start,
 #scn-configurePersonalData {
   padding: 1em;
-  background: rgb(67, 56, 113);
+  /*background: rgb(67, 56, 113);*/
+  background-color: rgb(170, 159, 212);
+  border: 1em solid rgb(67, 56, 113);
   height: 100%;
   width: 100%;
-  color: rgb(245, 244, 248);
+  /*color: rgb(245, 244, 248);*/
+  color: #212529;
 }
 
 h1,
@@ -202,7 +205,12 @@ p {
   border: 1em solid rgb(67, 56, 113);
   width: 100%;
   height: 100%;
-  padding: 2em;
+}
+
+@media (min-width: 800px) {
+  #scn-calculatedData {
+    padding: 2em;
+  }
 }
 
 #scn-calculatedData > div {
@@ -229,6 +237,15 @@ p {
   border-top: 0.1em solid rgb(67, 56, 113);
   border-left: none;
   padding-top: 2em;
+}
+
+#div-results-graph {
+  width: 100%;
+}
+
+#graph-labels {
+  margin-top: -2em;
+  font-size: smaller;
 }
 
 #div-showResults {
@@ -293,7 +310,7 @@ p {
 }
 
 #scn-explanation {
-  background-color: rgba(200, 250, 237, 0.2);
+  background-color: rgb(241, 250, 248);
   border: 1em solid rgb(113, 201, 177);
   width: 100%;
   height: 100%;
@@ -351,7 +368,7 @@ p {
   width: 100%;
 }
 
-#div-explanations > div:hover {
+#div-explanations > div > div:hover {
   transition: all 0.25s ease-in-out;
   background-color: rgba(173, 255, 217, 0.3);
   transform: scale(1.1);
@@ -369,7 +386,7 @@ p {
 
 .opacity {
   animation-name: fadeIn;
-  animation-duration: 2s;
+  animation-duration: 0.5s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
 }

@@ -43,7 +43,7 @@
         <h1 id="heading" style="display: none">Rentenlücke berechnen</h1>
         <div class="row">
           <div class="col-md-12 col-lg-6">
-            <div id="div-birth" style="display: none">
+            <div id="div-birth" class="opacity" style="display: none">
               <div>
                 <p>In welchem Jahr wurdest du geboren?</p>
                 <div class="row">
@@ -70,7 +70,7 @@
               </div>
             </div>
 
-            <div id="div-workSettings" style="display: none">
+            <div id="div-workSettings" class="opacity" style="display: none">
               <div>
                 <p>In welchem Jahr hast du begonnen, zu arbeiten?</p>
                 <div class="row">
@@ -128,7 +128,11 @@
               </div>
             </div>
 
-            <div id="div-retirementSettings" style="display: none">
+            <div
+              id="div-retirementSettings"
+              class="opacity"
+              style="display: none"
+            >
               <div>
                 <p>In welchem Alter möchtest du in Rente gehen?</p>
 
@@ -176,7 +180,11 @@
               </div>
             </div>
 
-            <div id="div-retirementFurtherSettings" style="display: none">
+            <div
+              id="div-retirementFurtherSettings"
+              class="opacity"
+              style="display: none"
+            >
               <div>
                 <p>
                   Sollen wir die Inflation und/oder Deine jährliche
@@ -216,7 +224,7 @@
               </div>
             </div>
           </div>
-          <div id="div-img-sofa" class="col-md-12 col-lg-6">
+          <div id="div-img-sofa" class="col-md-12 col-lg-6 opacity">
             <img src="images/page1.png" alt="sofa with cat" id="img-sofa-cat" />
             <img
               src="images/page2.png"
@@ -251,7 +259,7 @@
       </section>
 
       <section id="scn-calculatedData" style="display: none">
-        <div class="row">
+        <div class="row opacity">
           <div
             class="
               d-flex
@@ -305,18 +313,38 @@
                 <p>Rentenlücke</p>
               </div>
             </div>
-            <div id="graph-results">
+            <div
+              id="div-results-graph"
+              class="d-flex flex-column justify-content-center"
+            >
               <div
-                id="draw-retirement"
-                class="d-flex justify-content-center align-items-center"
+                id="graph-results"
+                class="d-flex flex-row justify-content-center align-items-end"
               >
-                1000€
+                <div
+                  id="draw-retirement"
+                  class="d-flex justify-content-center align-items-center"
+                >
+                  1000€
+                </div>
+                <div
+                  id="draw-retirementGap"
+                  class="d-flex justify-content-center align-items-center"
+                >
+                  1000€
+                </div>
               </div>
               <div
-                id="draw-retirementGap"
-                class="d-flex justify-content-center align-items-center"
+                id="graph-labels"
+                class="
+                  d-flex
+                  flex-row
+                  justify-content-between
+                  align-items-start
+                "
               >
-                1000€
+                <p>Gesetzliche Rente</p>
+                <p>Rentenlücke</p>
               </div>
             </div>
             <div id="div-buttons">
@@ -383,7 +411,12 @@
         </div>
       </section>
 
-      <section class="mt-5" id="scn-explanation" style="display: none">
+      <section
+        class="mt-5"
+        id="scn-explanation"
+        class="opacity"
+        style="display: none"
+      >
         <div
           class="
             d-flex
